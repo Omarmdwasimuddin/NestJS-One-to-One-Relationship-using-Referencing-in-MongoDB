@@ -119,3 +119,41 @@ export class StaffService {
 }
 ```
 ---
+
+
+
+#### `staff.controller.ts`
+```bash
+import { Controller, Get, Post } from '@nestjs/common';
+import { StaffService } from './staff.service';
+
+@Controller('staff')
+export class StaffController {
+    constructor(private readonly staffService: StaffService) {}
+
+    @Post()
+    async createStaff() {
+      return this.staffService.createStaff();
+    }
+
+    @Get()
+    async findAll() {
+      return this.staffService.findAll();
+    }
+
+}
+```
+---
+
+
+
+>## OUTPUT
+><img width="712" height="421" alt="image" src="https://github.com/user-attachments/assets/7cede05c-fed1-4b61-a75f-50f1edac97b5" />
+>
+>##
+><img width="716" height="693" alt="image" src="https://github.com/user-attachments/assets/e4a978a9-cd20-4038-972b-347fa3a31c2a" />
+>
+>##
+><img width="917" height="499" alt="image" src="https://github.com/user-attachments/assets/059602a6-d299-4e88-8336-3042f8543a5e" />
+>
+---
