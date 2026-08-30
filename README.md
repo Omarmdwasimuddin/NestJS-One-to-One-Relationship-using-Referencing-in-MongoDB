@@ -35,4 +35,22 @@ export class Profile extends Document {
 
 export const ProfileSchema = SchemaFactory.createForClass(Profile);
 ```
+
+#### `staff.schema.ts`
+```bash
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Document, Schema as MongooseSchema } from "mongoose";
+import { Profile } from "./profile.schema";
+
+@Schema()
+export class Staff extends Document {
+    @Prop()
+    name: string;
+
+    @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Profile' })
+    profile: Profile
+}
+
+export const StaffSchema = SchemaFactory.createForClass(Staff);
+```
 ---
