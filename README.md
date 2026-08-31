@@ -24,13 +24,13 @@ import { Document } from "mongoose";
 @Schema()
 export class Profile extends Document {
     @Prop()
-    age: number;
+    age!: number;
 
     @Prop()
-    qualification: string;
+    qualification!: string;
 
     @Prop()
-    experience: number;
+    experience!: number;
 }
 
 export const ProfileSchema = SchemaFactory.createForClass(Profile);
