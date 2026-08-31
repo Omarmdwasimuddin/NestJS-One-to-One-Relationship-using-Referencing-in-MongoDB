@@ -45,10 +45,10 @@ import { Profile } from "./profile.schema";
 @Schema()
 export class Staff extends Document {
     @Prop()
-    name: string;
+    name!: string;
 
     @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Profile' })
-    profile: Profile
+    profile!: Profile;
 }
 
 export const StaffSchema = SchemaFactory.createForClass(Staff);
